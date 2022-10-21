@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginPage">
+
+    <fragment
+        android:id="@+id/loginPage"
+        android:name="com.example.authmvvm.views.LoginPageFragment"
+        android:label="LoginPage" >
+        <action
+            android:id="@+id/action_loginPage_to_afterLogin"
+            app:destination="@id/afterLogin" />
+        <action
+            android:id="@+id/action_loginPage_to_registerFragment"
+            app:destination="@id/registerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/afterLogin"
+        android:name="com.example.authmvvm.views.AfterLoginFragment"
+        android:label="fragment_after_login"
+        tools:layout="@layout/fragment_after_login" >
+        <action
+            android:id="@+id/action_afterLogin_to_loginPage"
+            app:destination="@id/loginPage" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.example.authmvvm.views.RegisterFragment"
+        android:label="RegisterFragment" >
+        <action
+            android:id="@+id/action_registerFragment_to_afterLogin"
+            app:destination="@id/afterLogin" />
+        <action
+            android:id="@+id/action_registerFragment_to_loginPage"
+            app:destination="@id/loginPage" />
+    </fragment>
+</navigation>
